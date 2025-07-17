@@ -1,7 +1,7 @@
 
 # 🧩 Jogo Batalha Naval – Cliente/Servidor com TCP
 
-Este é um jogo de **Batalha Naval distribuído**, implementado em **Python** com o modelo **cliente-servidor** usando **socket TCP** para garantir confiabilidade e controle das jogadas em tempo real. Dois jogadores se conectam ao servidor e jogam em turnos, tentando acertar o navio escondido do adversário.
+Este é um jogo de **Batalha Naval distribuído**, implementado em **Python** com o modelo **cliente-servidor** usando **socket TCP**. Dois jogadores se conectam ao servidor e jogam em turnos, tentando acertar o navio escondido do adversário.
 
 ## 🎯 Objetivo
 
@@ -148,15 +148,43 @@ O servidor encerra a conexão com ambos os clientes logo após o envio das mensa
 | Número de clientes             | 2 por partida                      |
 | Ordem garantida de mensagens   | Sim (TCP)                          |
 
+## 🎯 Propósito do Software - Batalha Naval 
+
+O propósito deste software é desenvolver e demonstrar um sistema distribuído interativo, usando a clássica mecânica do jogo Batalha Naval. Ele tem objetivos tanto educacionais quanto práticos, sendo ideal para disciplinas de redes de computadores, sistemas distribuídos e programação com sockets.
+
+### Pontos Principais 
+
+  - Simular a comunicação cliente-servidor em tempo real.
+  - Trabalhar com conceitos de redes como conexões persistentes, troca de mensagens, controle de estados e turnos.
+  - Proporcionar um ambiente prático de testes para sockets TCP em LAN.
+  - Fornecer um jogo funcional e interativo, onde dois clientes jogam alternadamente contra no mesmo servidor.
+    
+### Benefícios:
+  - Ajuda a entender na prática como funciona a comunicação ponto-a-ponto.
+  - Estimula o raciocínio lógico com controle de fluxo, verificação de jogadas e tratamento de mensagens.
+  - Demonstra como um sistema simples pode ser escalado com lógica de rede.
+
+### Objetivos principais:
+
 ## 🚚 Escolha do Protocolo de Transporte – TCP
 
-### ✅ Motivações:
-- **Confiabilidade:** o TCP garante que as mensagens cheguem na ordem correta e sem perda.
-- **Controle de Fluxo:** evita sobrecarga no envio das jogadas.
-- **Facilidade de Implementação:** ideal para jogos por turno, com tráfego baixo e necessidade de confirmação.
+### 1. Confiabilidade:
+  - As mensagens de jogada precisam chegar 100% corretas (ex: "2,3").
+  - O protocolo garante entrega completa e na ordem correta — algo essencial para o controle de turno.
 
+### 2. Conexão persistente:
+  - Como o jogo envolve várias interações (turnos, jogadas, notificações), uma conexão persistente facilita o controle de estado.
+  - Ao contrário do UDP, onde cada mensagem é enviada "no escuro", o TCP mantém o canal de comunicação aberto entre cliente e servidor.
+
+### 3. Controle de fluxo e congestão:
+  - Se houver lentidão na rede, o TCP ajusta automaticamente o envio de pacotes, evitando perda de dados e mantendo a integridade do jogo.
+
+### 4. Simplicidade de implementação:
+  - Em Python, os sockets TCP são mais fáceis de gerenciar para conexões estáveis.
+  - Evita a necessidade de lidar com mensagens perdidas, timeouts ou retransmissões manuais (necessárias no UDP).
+    
 ### ❌ Nao uso do UDP:
-- Não oferece confiabilidade, podendo causar perda ou duplicação de pacotes.
+- Não oferece confiabilidade, podendo causar perda, duplicação de pacotes ou chegada fora de ordem.
 - Requer implementação manual de controle de sessão e retransmissão, o que não é necessário neste projeto.
 
 ---
