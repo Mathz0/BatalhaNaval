@@ -150,7 +150,7 @@ O servidor encerra a conexão com ambos os clientes logo após o envio das mensa
 
 ## 🎯 Propósito do Software - Batalha Naval 
 
-O propósito deste software é desenvolver e demonstrar um sistema distribuído interativo, usando a clássica mecânica do jogo Batalha Naval. Ele tem objetivos tanto educacionais quanto práticos, sendo ideal para disciplinas de redes de computadores, sistemas distribuídos e programação com sockets.
+O propósito deste software é desenvolver e demonstrar um sistema distribuído interativo, usando a clássica mecânica do jogo Batalha Naval. Ele tem objetivos práticos, conceitos de redes de computadores, sistemas distribuídos e programação com sockets.
 
 ### Pontos Principais 
 
@@ -163,8 +163,6 @@ O propósito deste software é desenvolver e demonstrar um sistema distribuído 
   - Ajuda a entender na prática como funciona a comunicação ponto-a-ponto.
   - Estimula o raciocínio lógico com controle de fluxo, verificação de jogadas e tratamento de mensagens.
   - Demonstra como um sistema simples pode ser escalado com lógica de rede.
-
-### Objetivos principais:
 
 ## 🚚 Escolha do Protocolo de Transporte – TCP
 
