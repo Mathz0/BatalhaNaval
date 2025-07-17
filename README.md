@@ -54,19 +54,19 @@ python Cliente.py  # jogador 2
 
     `Servidor.py`
      ```bash
-        server.bind(('localhost', 10000))
+        server.bind(('localhost', 12345))
     ```
     Para:
     ```bash
-        server.bind(('0.0.0.0', 10000))
+        server.bind(('0.0.0.0', 12345))
     ```
     `Cliente.py`
     ```bash
-        client.connect(('localhost', 10000))
+        client.connect(('localhost', 12345))
     ```
     Para:
     ```bash
-        client.connect(('192.168.0.10', 10000))
+        client.connect(('192.168.0.10', 12345))
     ```
     - Para obter o IP local do servidor use o comando no terminal:
         - Windows: ipconfig
