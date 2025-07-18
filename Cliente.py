@@ -2,7 +2,7 @@ import socket
 
 # Conecta ao servidor
 cliente = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-cliente.connect(('localhost', 10000))
+cliente.connect(('localhost', 12345))
 
 # Recebe identificação do servidor (Jogador 1 ou 2)
 identificacao = cliente.recv(1024).decode()

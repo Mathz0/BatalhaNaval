@@ -10,7 +10,7 @@ def criar_tabuleiro():
 
 # Criação do socket TCP
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind(('localhost', 10000))
+server.bind(('localhost', 12345))
 server.listen(2)
 
 print("Servidor aguardando 2 jogadores para iniciar o jogo...")
